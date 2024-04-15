@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>REDACTR - Scramble Words</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>REDACTR - Scramble Words</h1>
+    <form id="redactForm">
+        <label for="originalText">Original Text:</label>
+        <textarea id="originalText" name="originalText" rows="6" cols="50" required></textarea><br>
+        
+        <label for="wordsToRedact">Words to be Redacted:</label>
+        <input type="text" id="wordsToRedact" name="wordsToRedact" required><br>
+        
+        <label for="replacementOption">Choose a replacement:</label>
+        <select id="replacementOption" name="replacementOption" required>
+            <option value="asterisks">Asterisks (****)</option>
+            <option value="question_marks">Question Marks (????)</option>
+            <option value="dashes">Dashes (----)</option>
+            <option value="underscores">Underscores (____)</option>
+            <option value="other">Other</option>
+        </select><br>
+        
+        <label for="replacementText">Custom Replacement (if selected 'Other'):</label>
+        <input type="text" id="replacementText" name="replacementText"><br>
+        
+        <input type="submit" value="Redact Now">
+        <button type="button" id="resetButton">Reset Form</button>
+    </form>
     
+    <div id="redactedContent" class="result"></div>
+    <div id="status" class="result"></div>
+    
+    <script src="redact.js"></script>
 </body>
 </html>
